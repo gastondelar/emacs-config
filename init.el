@@ -28,6 +28,7 @@
     cyberpunk-theme
     default-text-scale
     neotree
+    magit
   )
   "paquetes que deben estar instalados al iniciar"
 )
@@ -81,6 +82,11 @@
 ;;bindeo teclas a funciones
  (dolist (kf keybinds)
    (global-set-key (kbd (car kf)) (cdr kf)))
+
+
+(use-package magit
+  :ensure t
+  :config (setq magit-view-git-manual-method 'man) )
 
 (use-package neotree
   :ensure t
